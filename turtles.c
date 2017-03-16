@@ -8,7 +8,7 @@ enum Status { NORTH, EAST, SOUTH, WEST };
 int main(void)
 {
 	int count, m;
-	int commands[CMAX][CMAX] = { 0 };
+	int commands[CMAX][2] = { 0 };
 	int array[MAX][MAX] = { 0 };
 	int z = 0, x = 0, a = 0, b = 0, c = 0, r = 0;
 	printf("Enter commands\n");
