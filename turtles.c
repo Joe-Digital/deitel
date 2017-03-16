@@ -4,23 +4,17 @@
 #define CMAX 10
 
 enum Status { NORTH, EAST, SOUTH, WEST };
- 
-enum Dir { UP, DOWN, LEFT, RIGHT };
-
 
 int main(void)
 {
-	int count;
-	int c = 0;
-	int commands[CMAX][2] = { 0 };
+	int count, m;
+	int commands[CMAX][CMAX] = { 0 };
 	int array[MAX][MAX] = { 0 };
-	int a = 0, b = 0;
-	int z = 0, x = 0;
+	int z = 0, x = 0, a = 0, b = 0, c = 0, r = 0;
 	printf("Enter commands\n");
 	for(count = 1; count <= CMAX ; count++, c++) {
-		scanf("%d", &commands[c]);
-		}
-	int m;
+		scanf("%d", commands[c]);
+	}
 	enum Status gameStatus;
 	gameStatus = EAST;
 	for(m = 0; m <= CMAX; m++) {
@@ -47,7 +41,6 @@ int main(void)
 					array[a][b] = commands[m][0];
 					break;
 				}
-				
 				break;
 
 			case 3:
@@ -71,7 +64,6 @@ int main(void)
 					break;
 				}
 				break;
-			
 			case 4:
 				if(gameStatus == SOUTH) {
 					++b;
@@ -99,30 +91,30 @@ int main(void)
 				}
 			case 5:
 				if(gameStatus == EAST) {
-					for(z = 1; z <= commands[m][1]; z++) {
+					for(z = 1; z <= r; z++) {
 						++b;
-						array[a][b] = 2;
+						array[a][b] = commands[m][0];
 					}
 					break;
 				}
 				if(gameStatus == SOUTH) {
-					for(z = 1; z <= commands[m][1]; z++) {
+					for(z = 1; z <= r; z++) {
 						++a;
-						array[a][b] = 2;
+						array[a][b] = commands[m][0];
 					}
 					break;
 				}
 				if(gameStatus == NORTH) {
-					for(z = 1; z <= commands[m][1]; z++) {
+					for(z = 1; z <= r; z++) {
 						--a;
-						array[a][b] = 2;
+						array[a][b] = commands[m][0];
 					}
 					break;
 				}
 				if(gameStatus == WEST) {
-					for(z = 1; z <= commands[m][1]; z++) {
+					for(z = 1; z <= r; z++) {
 						--b;
-						array[a][b] = 2;
+						array[a][b] = commands[m][0];
 					}
 					break;
 				}
@@ -133,6 +125,7 @@ int main(void)
 		}
 
 	}
+	printf("\n");
 	int j, k;
 	for(j = 0; j < MAX; j++) {
 		for(k = 0; k < MAX; k++) {
