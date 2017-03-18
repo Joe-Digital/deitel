@@ -138,19 +138,6 @@ int main(void)
 		}
 	}
 
-
-//	printf("\n");
-//	int z, j, k;
-//	for (z = 0; z < MAX; z++) {
-//		for(j = 0; j < MAX; j++) {
-//			printf("%d", array[z][j]);
-//		}
-//	}
-
-
-
-
-
 	printf("\n");
 	int j, k;
 	for(k = 0; k < MAX; k++) {
@@ -158,29 +145,12 @@ int main(void)
 			if(array[k][j] > 0){
 				printf("*");
 			}
-//			else if(array[k][j] == 5) {
-//				printf("*");
-//			}
 			else if(array[k][j] == 0) {
 				printf(".");
 			}
 		}
 		printf("\n");
 	}
-
-
-
-//	int z, x;
-//	for(z = 0; z < CMAX; z++) {
-//		if(commands[z][d] == 2) {
-//			printf("*");
-//		}
-//		if(commands[z][d] == 5) {
-//			for(x = 0; x < commands[c][1]; x++) {
-//				printf("*");
-//			}
-//		}
-//	}
 
 	return 0;
 }
